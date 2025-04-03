@@ -1,107 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Interactive STEM Teaching Tool</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-  <style>
-    body {
-      font-family: 'Poppins', sans-serif;
-      background: url('bg.jpg') no-repeat center center fixed;
-      background-size: cover;
-      margin: 0;
-      padding: 0;
-      color: #fff;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      text-align: center;
-      filter: blur(0.2px);
-    }
-	h2 {
-	  font-family: 'Poppins', sans-serif;
-      background: url('bg.jpg') no-repeat center center fixed;
-      background-size: cover;
-      margin: 0;
-      padding: 0;
-      color: #AA7A79;
-	}
-    header {
-      background-color: rgba(173, 163, 255, 0.8);
-      color: #4A4A4A;
-      padding: 20px;
-      width: 100%;
-      box-sizing: border-box;
-      position: fixed;
-      top: 0;
-      left: 0;
-      z-index: 10;
-      font-weight: 600;
-      font-size: 2rem;
-      text-align: center;
-    }
-
-    main {
-      margin-top: 100px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 20px;
-      animation: fadeIn 1s ease-in-out;
-    }
-
-    .subject-link {
-      display: block;
-      width: 70%;
-      padding: 20px;
-      margin: 10px 0;
-      background-color: rgba(173, 163, 255, 0.7);
-      color: #4A4A4A;
-      text-decoration: none;
-      border-radius: 10px;
-      font-size: 1.2rem;
-      font-weight: 600;
-      transition: background-color 0.3s ease, transform 0.3s ease;
-    }
-
-    .subject-link:hover {
-      background-color: rgba(141, 126, 255, 0.7);
-      transform: scale(1.05);
-    }
-
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-      }
-      to {
-        opacity: 1;
-      }
-    }
-
-    .subject-link:active {
-      transform: scale(0.98);
-    }
-
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive STEM Teaching Tool</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
 <header>
-  <h1>Interactive STEM Teaching Tool</h1>
+    <h1>Interactive STEM Teaching Tool</h1>
 </header>
 
 <main>
-<br><br><br><br>  <br><br><br><br>
-
-  <h2>Select a Subject</h2>
-  <a href="physics.html" class="subject-link">Physics Experiments</a>
-  <a href="chemistry.html" class="subject-link">Chemistry Experiments</a>
-  <a href="biology.html" class="subject-link">Biology Experiments</a>
-  
-  <br><br><br><br>
+    <h2>Select a Subject</h2>
+    <a href="physics.html" class="subject-link">Physics Experiments</a>
+    <a href="chemistry.html" class="subject-link">Chemistry Experiments</a>
+    <a href="biology.html" class="subject-link">Biology Experiments</a>
 </main>
 
 </body>
