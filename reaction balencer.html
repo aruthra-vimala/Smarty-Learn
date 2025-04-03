@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Free Fall Experiment</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: url('bg.jpg') no-repeat center center fixed;
+      background-size: cover;
+      margin: 0;
+      padding: 0;
+      color: #4A4A4A;
+      text-align: center;
+    }
+
+    header {
+      background-color: rgba(98, 0, 234, 0.8); /* Soft pastel purple */
+      color: white;
+      padding: 20px;
+      text-align: center;
+      font-weight: 600;
+      font-size: 2rem;
+    }
+
+    main {
+      padding: 30px;
+      margin-top: 80px; /* Space for the fixed header */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .experiment {
+      background-color: rgba(255, 255, 255, 0.9); /* White with slight transparency */
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      width: 80%;
+      max-width: 600px;
+      text-align: left;
+    }
+
+    .experiment h2 {
+      color: #6200ea;
+      font-size: 1.6rem;
+      font-weight: 600;
+    }
+
+    .experiment p {
+      color: #5e5e5e;
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    .controls {
+      margin-top: 15px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .controls label {
+      font-size: 1rem;
+      color: #4A4A4A;
+    }
+
+    .controls input {
+      padding: 10px;
+      font-size: 1rem;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      outline: none;
+    }
+
+    .controls input:focus {
+      border-color: #6200ea;
+    }
+
+    button {
+      background-color: #6200ea; /* Soft pastel purple */
+      color: white;
+      border: none;
+      padding: 12px 25px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #3700b3; /* Darker purple on hover */
+    }
+
+    #result {
+      background-color: #f9f9f9;
+      padding: 12px;
+      margin-top: 15px;
+      border-radius: 8px;
+      color: #6200ea;
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-top: 20px;
+      text-align: center;
+      text-decoration: none;
+      color: #6200ea;
+      font-weight: 600;
+      font-size: 1.2rem;
+      transition: color 0.3s ease;
+    }
+
+    .back-link:hover {
+      color: #3700b3;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Reaction Balancer</h1>
+</header>
+
+<main>
+
+<p>A reaction balancer is a tool or process used to balance chemical equations, ensuring that the number of atoms of each element is the same on both sides of the equation. This is essential for accurate chemical calculations and understanding how reactions occur.</p>
+
+<p>In a chemical reaction, reactants transform into products. For a balanced reaction, the number of atoms for each element involved must be conserved. This principle is based on the Law of Conservation of Mass.</p>
+
+<p>Key components involved in balancing chemical reactions:</p>
+<p><strong>Reactants:</strong> The substances present before the reaction takes place.</p>
+<p><strong>Products:</strong> The new substances formed after the reaction has occurred.</p>
+
+<p>Steps to balance a chemical reaction:</p>
+<p>1. Write down the unbalanced equation with the reactants and products.</p>
+<p>2. Count the number of atoms of each element on both sides.</p>
+<p>3. Adjust the coefficients (the numbers in front of the chemical formulas) to make the number of atoms of each element equal on both sides.</p>
+<p>4. Check that the number of atoms for each element is balanced, and that the equation is properly simplified.</p>
+
+<p><strong>Example:</strong></p>
+<p><em>Unbalanced reaction: C<sub>2</sub>H<sub>6</sub> + O<sub>2</sub> → CO<sub>2</sub> + H<sub>2</sub>O</em></p>
+
+<p><strong>Balanced Reaction:</strong></p>
+<p><em>C<sub>2</sub>H<sub>6</sub> + 7O<sub>2</sub> → 4CO<sub>2</sub> + 6H<sub>2</sub>O</em></p>
+
+<p><strong>Key Tips for Balancing Reactions:</strong></p>
+<p>✔ Start by balancing elements that appear in only one reactant and one product.</p>
+<p>✔ Leave elements like oxygen or hydrogen until the end as they are often found in multiple reactants or products.</p>
+<p>✔ Ensure that all coefficients are in their smallest whole-number ratios.</p>
+
+<p>Balancing chemical reactions is crucial in various scientific fields, including chemistry, biochemistry, and industrial applications. It ensures the proper quantities of reactants and products, making the process predictable and efficient!</p>
+
+  <div class="experiment">
+    <h2>Balance Chemical Equations</h2>
+    <p>Enter a chemical equation to balance it.</p>
+    <input type="text" id="equation" placeholder="e.g., H2 + O2 = H2O">
+    <button onclick="balanceEquation()">Balance</button>
+    <p id="result"></p>
+  </div>
+  <a href="chemistry.html">Back to Chemistry Experiments</a><br>
+    <a href="front end.html" class="back-link" >Back to Main Page</a>
+
+</main>
+
+<script>
+  function balanceEquation() {
+    document.getElementById('result').innerText = "Feature Coming Soon!";
+  }
+</script>
+
+</body>
+</html>

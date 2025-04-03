@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Free Fall Experiment</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: url('bg.jpg') no-repeat center center fixed;
+      background-size: cover;
+      margin: 0;
+      padding: 0;
+      color: #4A4A4A;
+      text-align: center;
+    }
+
+    header {
+      background-color: rgba(98, 0, 234, 0.8); /* Soft pastel purple */
+      color: white;
+      padding: 20px;
+      text-align: center;
+      font-weight: 600;
+      font-size: 2rem;
+    }
+
+    main {
+      padding: 30px;
+      margin-top: 80px; /* Space for the fixed header */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .experiment {
+      background-color: rgba(255, 255, 255, 0.9); /* White with slight transparency */
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      width: 80%;
+      max-width: 600px;
+      text-align: left;
+    }
+
+    .experiment h2 {
+      color: #6200ea;
+      font-size: 1.6rem;
+      font-weight: 600;
+    }
+
+    .experiment p {
+      color: #5e5e5e;
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    .controls {
+      margin-top: 15px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .controls label {
+      font-size: 1rem;
+      color: #4A4A4A;
+    }
+
+    .controls input {
+      padding: 10px;
+      font-size: 1rem;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      outline: none;
+    }
+
+    .controls input:focus {
+      border-color: #6200ea;
+    }
+
+    button {
+      background-color: #6200ea; /* Soft pastel purple */
+      color: white;
+      border: none;
+      padding: 12px 25px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #3700b3; /* Darker purple on hover */
+    }
+
+    #result {
+      background-color: #f9f9f9;
+      padding: 12px;
+      margin-top: 15px;
+      border-radius: 8px;
+      color: #6200ea;
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-top: 20px;
+      text-align: center;
+      text-decoration: none;
+      color: #6200ea;
+      font-weight: 600;
+      font-size: 1.2rem;
+      transition: color 0.3s ease;
+    }
+
+    .back-link:hover {
+      color: #3700b3;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Electrolysis of Water</h1>
+  
+</header>
+
+<main>
+<p>Electrolysis is a process that uses electricity to break down a compound into its elements. This technique is widely used in industries for extracting and refining metals, producing chemicals, and even splitting water into hydrogen and oxygen.</p>
+
+<p>Electrolysis occurs in a solution or molten state, where the substance being decomposed (called the <strong>electrolyte</strong>) allows electric current to pass through. The process requires two key components:</p>
+
+<p><strong>Anode (+):</strong> The positive electrode</p>
+<p><strong>Cathode (-):</strong> The negative electrode</p>
+
+<p>When an electric current is passed through the electrolyte, ions move toward their respective electrodes:</p>
+<p><strong>Cations (positive ions)</strong> move toward the <strong>cathode</strong>, where they gain electrons (reduction).</p>
+<p><strong>Anions (negative ions)</strong> move toward the <strong>anode</strong>, where they lose electrons (oxidation).</p>
+
+<p>Water (H₂O) can be split into hydrogen (H₂) and oxygen (O₂) using electrolysis:</p>
+
+<p>1. Water is mixed with a small amount of an electrolyte (like sulfuric acid) to improve conductivity.</p>
+<p>2. When electricity is applied:</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;- At the <strong>cathode</strong>, hydrogen ions (H⁺) gain electrons to form hydrogen gas (H₂).</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;- At the <strong>anode</strong>, hydroxide ions (OH⁻) lose electrons to form oxygen gas (O₂).</p>
+
+<p><strong>Overall Reaction:</strong></p>
+<p><em>2H<sub>2</sub>O (l) → 2H<sub>2</sub> (g) + O<sub>2</sub> (g)</em></p>
+
+<p><strong>Applications of Electrolysis:</strong></p>
+<p>✔ <strong>Metal Extraction:</strong> Used in refining metals like aluminum and copper.</p>
+<p>✔ <strong>Electroplating:</strong> Coating objects with a thin layer of metal for protection or aesthetics.</p>
+<p>✔ <strong>Hydrogen Fuel Production:</strong> A sustainable way to produce clean fuel.</p>
+
+<p>Electrolysis is an essential process in modern technology, playing a vital role in energy storage, industry, and environmental applications! 🚀</p>
+
+
+  <div class="experiment">
+    <h2>Observe Water Electrolysis</h2>
+    <p>Click the button to see what happens when an electric current passes through water.</p>
+    <button onclick="startElectrolysis()">Start Electrolysis</button>
+    <p id="result"></p>
+  </div>
+  <a href="chemistry.html">Back to Chemistry Experiments</a><br>
+    <a href="front end.html" class="back-link" >Back to Main Page</a>
+
+</main>
+
+<script>
+  function startElectrolysis() {
+    document.getElementById('result').innerText = "Water splits into Hydrogen and Oxygen gases!";
+  }
+</script>
+
+</body>
+</html>

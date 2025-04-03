@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study Dashboard</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: url('bg.jpg') no-repeat center center fixed;
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            color: #4A4A4A;
+            text-align: center;
+            filter: blur(0.2px);
+        }
+
+        header {
+            background-color: rgba(173, 163, 255, 0.8);
+            color: #4A4A4A;
+            padding: 20px;
+            text-align: center;
+            font-weight: 600;
+            font-size: 2rem;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 10;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px;
+            margin-top: 100px;
+        }
+
+        .dashboard {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+            gap: 30px;
+        }
+
+        .experiment {
+            background-color: rgba(255, 255, 255, 0.8); 
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            width: 30%;
+            text-align: center;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .experiment:hover {
+            background-color: rgba(173, 163, 255, 0.6);
+            transform: scale(1.05);
+        }
+
+        .experiment h3 {
+            color: #4A4A4A;
+            font-size: 1.5rem;
+        }
+
+        .experiment p {
+            color: #6D6D6D;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        .log, .interests {
+            margin-top: 30px;
+        }
+
+        .log input, .log button, .interests button {
+            padding: 10px;
+            font-size: 1rem;
+            border-radius: 5px;
+        }
+
+        .log input {
+            width: 80%;
+            margin-right: 10px;
+        }
+
+        .log button {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .log button:hover {
+            background-color: #218838;
+        }
+
+        .interests button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            margin: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .interests button:hover {
+            background-color: #0056b3;
+        }
+
+        .back-link {
+            display: block;
+            margin-top: 30px;
+            text-align: center;
+            text-decoration: none;
+            color: #6200ea;
+            font-weight: bold;
+            font-size: 1.2rem;
+            transition: color 0.3s ease;
+        }
+
+        .back-link:hover {
+            color: #3700b3;
+        }
+
+        /* Speedometer styles */
+        .speedometer-container {
+            width: 150px;
+            height: 150px;
+            position: relative;
+            margin: auto;
+        }
+
+        .streak-container {
+            margin-top: 30px;
+            font-size: 1.5rem;
+        }
+
+        .streak-bar {
+            width: 100%;
+            height: 20px;
+            border-radius: 10px;
+            background-color: #f4f4f9;
+            position: relative;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .streak-progress {
+            height: 100%;
+            border-radius: 10px;
+            background-color: #28a745;
+            transition: width 0.3s ease;
+        }
+
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Study Dashboard</h1>
+    <p>Track your study progress and areas of interest</p>
+</header>
+<br><br><br><br><br><br><br><br>
+<div class="container">
+    <div class="dashboard">
+        <!-- Speedometer for Time Spent -->
+        <div class="experiment">
+            <h3>Time Spent on Subject</h3>
+            <div class="speedometer-container">
+                <canvas id="speedometer" width="150" height="150"></canvas>
+            </div>
+            <p id="timeSpent">0 hours</p>
+        </div>
+
+        <!-- Streak Tracker for Daily Logins -->
+        <div class="experiment">
+            <h3>Daily Login Streak</h3>
+            <div class="streak-container">
+                <div class="streak-bar">
+                    <div class="streak-progress" id="streakProgress" style="width: 0%;"></div>
+                </div>
+                <p id="streakCount">0 days</p>
+            </div>
+        </div>
+
+        <!-- Areas of Interest Card -->
+        <div class="experiment">
+            <h3>Areas of Interest</h3>
+            <p id="interestList">None selected</p>
+        </div>
+    </div>
+
+    <div class="log">
+        <h3>Log Time Spent Today</h3>
+        <input type="number" id="timeInput" placeholder="Enter hours spent" min="0" step="0.1">
+        <button onclick="logTime()">Log Time</button>
+    </div>
+
+    <div class="log">
+        <h3>Log Daily Login</h3>
+        <button onclick="logLogin()">Log Login</button>
+    </div>
+
+    <div class="interests">
+        <h3>Select Your Areas of Interest</h3>
+        <button onclick="addInterest('Space Science')">Space Science</button>
+        <button onclick="addInterest('Ethical Hacking')">Ethical Hacking</button>
+        <button onclick="addInterest('UI/UX Design')">UI/UX Design</button>
+        <button onclick="addInterest('Artificial Intelligence')">AI</button>
+    </div>
+
+    <!-- Back Link to Main Page -->
+    <a href="front end.html" class="back-link">Learn through Experiments</a>
+
+</div>
+
+<script>
+    let timeSpent = 0;
+    let dailyLogins = 0;
+    let streak = 0;
+    let interests = [];
+
+    // Log Time Function
+    function logTime() {
+        let time = parseFloat(document.getElementById('timeInput').value);
+        if (!isNaN(time) && time > 0) {
+            timeSpent += time;
+            document.getElementById('timeSpent').innerText = timeSpent + " hours";
+            updateSpeedometer(timeSpent);
+        }
+    }
+
+    // Log Daily Login Function
+    function logLogin() {
+        dailyLogins++;
+        streak++;
+        document.getElementById('streakCount').innerText = streak + " days";
+        document.getElementById('streakProgress').style.width = (streak * 3) + "%"; // Example of progress
+    }
+
+    // Add Area of Interest
+    function addInterest(interest) {
+        if (!interests.includes(interest)) {
+            interests.push(interest);
+            document.getElementById('interestList').innerText = interests.join(', ');
+        }
+    }
+
+    // Update Speedometer
+    function updateSpeedometer(time) {
+        const canvas = document.getElementById("speedometer");
+        const ctx = canvas.getContext("2d");
+        const radius = canvas.width / 2;
+        const maxTime = 10; // Maximum time for full speedometer
+        const angle = (time / maxTime) * Math.PI;
+
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        ctx.beginPath();
+        ctx.arc(radius, radius, radius - 10, 0, 2 * Math.PI);
+        ctx.fillStyle = "#f4f4f9";
+        ctx.fill();
+        ctx.strokeStyle = "#4A4A4A";
+        ctx.lineWidth = 5;
+        ctx.stroke();
+
+        // Draw filled portion of speedometer
+        ctx.beginPath();
+        ctx.arc(radius, radius, radius - 10, -Math.PI / 2, -Math.PI / 2 + angle);
+        ctx.lineTo(radius, radius);
+        ctx.fillStyle = "#28a745";
+        ctx.fill();
+    }
+</script>
+
+</body>
+</html>

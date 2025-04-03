@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Newton's Second Law Experiment</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: url('bg.jpg') no-repeat center center fixed;
+      background-size: cover;
+      margin: 0;
+      padding: 0;
+      color: #4A4A4A;
+      text-align: center;
+    }
+
+    header {
+      background-color: rgba(98, 0, 234, 0.8); /* Soft pastel purple */
+      color: white;
+      padding: 20px;
+      text-align: center;
+      font-weight: 600;
+      font-size: 2rem;
+    }
+
+    main {
+      padding: 30px;
+      margin-top: 80px; /* Space for the fixed header */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .experiment {
+      background-color: rgba(255, 255, 255, 0.9); /* White with slight transparency */
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      width: 80%;
+      max-width: 600px;
+      text-align: left;
+    }
+
+    .experiment h2 {
+      color: #6200ea;
+      font-size: 1.6rem;
+      font-weight: 600;
+    }
+
+    .experiment p {
+      color: #5e5e5e;
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    .controls {
+      margin-top: 15px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .controls label {
+      font-size: 1rem;
+      color: #4A4A4A;
+    }
+
+    .controls input {
+      padding: 10px;
+      font-size: 1rem;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      outline: none;
+    }
+
+    .controls input:focus {
+      border-color: #6200ea;
+    }
+
+    button {
+      background-color: #6200ea; /* Soft pastel purple */
+      color: white;
+      border: none;
+      padding: 12px 25px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #3700b3; /* Darker purple on hover */
+    }
+
+    #result {
+      background-color: #f9f9f9;
+      padding: 12px;
+      margin-top: 15px;
+      border-radius: 8px;
+      color: #6200ea;
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-top: 20px;
+      text-align: center;
+      text-decoration: none;
+      color: #6200ea;
+      font-weight: 600;
+      font-size: 1.2rem;
+      transition: color 0.3s ease;
+    }
+
+    .back-link:hover {
+      color: #3700b3;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Newton's Second Law Experiment</h1>
+</header>
+
+<main>
+  <p>Newton's Second Law of Motion states that the acceleration of an object is directly proportional to the net force acting on it and inversely proportional to its mass. This law can be expressed with the following equation:</p>
+
+  <p><em>F = ma</em></p>
+
+  <p>Where:</p>
+  <ul>
+    <li><strong>F</strong> is the net force acting on the object (measured in Newtons, N).</li>
+    <li><strong>m</strong> is the mass of the object (measured in kilograms, kg).</li>
+    <li><strong>a</strong> is the acceleration produced by the force (measured in meters per second squared, m/s²).</li>
+  </ul>
+
+  <p>This law explains how the velocity of an object changes when a force is applied to it. The greater the force applied to an object, the greater its acceleration will be, provided that the mass of the object remains constant.</p>
+
+  <p><strong>Understanding the Relationship:</strong></p>
+  <p>- When the force acting on an object increases, its acceleration increases if the mass stays the same.</p>
+  <p>- When the mass of an object increases, the acceleration decreases for the same amount of force.</p>
+
+  <p><strong>Examples:</strong></p>
+  <ul>
+    <li><strong>Example 1:</strong> If you push a cart, the cart will accelerate in the direction of the applied force. The harder you push, the faster the cart accelerates.</li>
+    <li><strong>Example 2:</strong> If you apply the same amount of force to two objects, one heavier and one lighter, the lighter object will accelerate more than the heavier one because it has less mass.</li>
+  </ul>
+
+  <p><strong>Real-life Applications:</strong></p>
+  <ul>
+    <li><strong>Vehicles:</strong> The performance of cars, planes, and other vehicles depends on the forces acting on them and their mass. The engine’s force generates acceleration, affecting speed and motion.</li>
+    <li><strong>Sports:</strong> In sports like soccer, the force exerted by a player on the ball determines its acceleration and distance traveled.</li>
+    <li><strong>Rocket Launches:</strong> A rocket’s acceleration during launch is determined by the thrust generated by its engines (force) and its mass.</li>
+  </ul>
+
+  <p><strong>Key Takeaways:</strong></p>
+  <ul>
+    <li>Newton’s Second Law explains the relationship between force, mass, and acceleration.</li>
+    <li>It is fundamental in understanding how objects move under the influence of forces.</li>
+    <li>It has wide-ranging applications in everyday life, engineering, and space exploration!</li>
+  </ul>
+
+  <p>In summary, Newton's Second Law of Motion is essential in explaining the behavior of objects when forces are applied, helping us understand the dynamics of motion! ⚡️🛸</p>
+
+  <div class="experiment">
+    <h2>Force, Mass, and Acceleration</h2>
+    <p>Enter mass and force to calculate acceleration using Newton's Second Law (F = ma).</p>
+
+    <div class="controls">
+      <label for="mass">Enter Mass (in kg):</label>
+      <input type="number" id="mass" placeholder="e.g., 5" min="1">
+
+      <label for="force">Enter Force (in N):</label>
+      <input type="number" id="force" placeholder="e.g., 20" min="1">
+
+      <button onclick="calculateAcceleration()">Calculate Acceleration</button>
+    </div>
+
+    <div id="result"></div>
+  </div>
+
+  <a href="physics.html" class="back-link">Back to Physics Experiments</a><br>
+  <a href="front end.html" class="back-link">Back to Main Page</a>
+</main>
+
+<script>
+  function calculateAcceleration() {
+    const mass = document.getElementById('mass').value;
+    const force = document.getElementById('force').value;
+
+    if (!mass || mass <= 0 || !force || force <= 0) {
+      document.getElementById('result').innerText = 'Please enter valid values for mass and force.';
+      return;
+    }
+
+    const acceleration = (force / mass).toFixed(2);
+    document.getElementById('result').innerText = `The acceleration is ${acceleration} m/s².`;
+  }
+</script>
+
+</body>
+</html>

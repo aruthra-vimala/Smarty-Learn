@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Free Fall Experiment</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: url('bg.jpg') no-repeat center center fixed;
+      background-size: cover;
+      margin: 0;
+      padding: 0;
+      color: #4A4A4A;
+      text-align: center;
+    }
+
+    header {
+      background-color: rgba(98, 0, 234, 0.8); /* Soft pastel purple */
+      color: white;
+      padding: 20px;
+      text-align: center;
+      font-weight: 600;
+      font-size: 2rem;
+    }
+
+    main {
+      padding: 30px;
+      margin-top: 80px; /* Space for the fixed header */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .experiment {
+      background-color: rgba(255, 255, 255, 0.9); /* White with slight transparency */
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      width: 80%;
+      max-width: 600px;
+      text-align: left;
+    }
+
+    .experiment h2 {
+      color: #6200ea;
+      font-size: 1.6rem;
+      font-weight: 600;
+    }
+
+    .experiment p {
+      color: #5e5e5e;
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    .controls {
+      margin-top: 15px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .controls label {
+      font-size: 1rem;
+      color: #4A4A4A;
+    }
+
+    .controls input {
+      padding: 10px;
+      font-size: 1rem;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      outline: none;
+    }
+
+    .controls input:focus {
+      border-color: #6200ea;
+    }
+
+    button {
+      background-color: #6200ea; /* Soft pastel purple */
+      color: white;
+      border: none;
+      padding: 12px 25px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #3700b3; /* Darker purple on hover */
+    }
+
+    #result {
+      background-color: #f9f9f9;
+      padding: 12px;
+      margin-top: 15px;
+      border-radius: 8px;
+      color: #6200ea;
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-top: 20px;
+      text-align: center;
+      text-decoration: none;
+      color: #6200ea;
+      font-weight: 600;
+      font-size: 1.2rem;
+      transition: color 0.3s ease;
+    }
+
+    .back-link:hover {
+      color: #3700b3;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Pendulum Experiment</h1>
+</header>
+
+<main>
+
+<p>A pendulum is a mass (called the <strong>bob</strong>) attached to a fixed point by a string or rod. When displaced from its resting position and released, the pendulum swings back and forth due to the force of gravity acting on it.</p>
+
+<p><strong>How a Pendulum Works:</strong></p>
+<p>When a pendulum is pulled back and released, it is influenced by gravitational force that pulls it downward. The motion of a pendulum is an example of <strong>periodic motion</strong>, where the object repeats its motion in a regular interval.</p>
+
+<p><strong>The basic components of a pendulum:</strong></p>
+<ul>
+    <li><strong>Bob:</strong> The mass or weight attached to the string or rod.</li>
+    <li><strong>String/Rod:</strong> The flexible or rigid material that connects the bob to the pivot point.</li>
+    <li><strong>Pivot Point:</strong> The fixed point from which the pendulum swings.</li>
+</ul>
+
+<p><strong>Types of Pendulum Motion:</strong></p>
+<p><strong>Simple Pendulum:</strong> A mass attached to a string or rod of negligible mass, swinging in a small arc. The motion of a simple pendulum is characterized by a constant period of oscillation, which is the time taken to complete one full swing.</p>
+<p><strong>Compound Pendulum:</strong> A rigid body (not just a mass) that swings around a fixed point. Its period of oscillation depends on the distribution of its mass and the length of the rod.</p>
+
+<p><strong>Factors Affecting Pendulum Motion:</strong></p>
+<ul>
+    <li><strong>Length of the Pendulum:</strong> A longer string or rod results in a longer period (slower swing), while a shorter pendulum swings faster.</li>
+    <li><strong>Acceleration Due to Gravity:</strong> The force of gravity affects the pendulum's motion. The greater the gravitational pull, the faster the pendulum swings.</li>
+    <li><strong>Amplitude of Swing:</strong> For small oscillations, the period remains almost constant, but at larger swings (greater amplitude), the period may slightly increase.</li>
+</ul>
+
+<p><strong>Period of a Simple Pendulum:</strong></p>
+<p>The period of a simple pendulum (T) can be calculated using the formula:</p>
+<p><em>T = 2π√(L / g)</em></p>
+<p>Where:</p>
+<ul>
+    <li><strong>T</strong> is the period of the pendulum (time taken for one complete swing).</li>
+    <li><strong>L</strong> is the length of the pendulum (distance from the pivot point to the center of the bob).</li>
+    <li><strong>g</strong> is the acceleration due to gravity (approximately 9.8 m/s² on Earth).</li>
+</ul>
+
+<p><strong>Applications of Pendulum:</strong></p>
+<ul>
+    <li><strong>Timekeeping:</strong> Pendulums were historically used in clocks to regulate time due to their predictable periodic motion.</li>
+    <li><strong>Seismometers:</strong> Pendulums are used in seismographs to detect ground motion during earthquakes.</li>
+    <li><strong>Scientific Experiments:</strong> Pendulums are commonly used in physics experiments to study motion and forces.</li>
+</ul>
+
+<p>In conclusion, the pendulum is a classic example of periodic motion, helping to illustrate key concepts in physics such as gravity, oscillations, and simple harmonic motion. ⏳⚖️</p>
+
+  <div class="experiment">
+    <h2>Calculate Pendulum Period</h2>
+    <p>Enter the length of the pendulum to calculate its period using the formula T = 2π√(L/g).</p>
+    
+    <div class="controls">
+      <label for="length">Enter Length (in meters):</label>
+      <input type="number" id="length" placeholder="e.g., 1" min="0.1" step="0.01">
+      
+      <button onclick="calculatePeriod()">Calculate Period</button>
+    </div>
+
+    <div id="result"></div>
+  </div>
+
+  <a href="physics.html" class="back-link">Back to Physics Experiments</a>
+    <a href="front end.html" class="back-link" >Back to Main Page</a>
+
+</main>
+
+<script>
+  function calculatePeriod() {
+    const length = document.getElementById('length').value;
+    const gravity = 9.8; // m/s²
+
+    if (!length || length <= 0) {
+      document.getElementById('result').innerText = 'Please enter a valid length.';
+      return;
+    }
+
+    const period = (2 * Math.PI * Math.sqrt(length / gravity)).toFixed(2);
+    document.getElementById('result').innerText = `The pendulum period is ${period} seconds.`;
+  }
+</script>
+
+</body>
+</html>

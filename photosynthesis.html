@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Free Fall Experiment</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: url('bg.jpg') no-repeat center center fixed;
+      background-size: cover;
+      margin: 0;
+      padding: 0;
+      color: #4A4A4A;
+      text-align: center;
+    }
+
+    header {
+      background-color: rgba(98, 0, 234, 0.8); /* Soft pastel purple */
+      color: white;
+      padding: 20px;
+      text-align: center;
+      font-weight: 600;
+      font-size: 2rem;
+    }
+
+    main {
+      padding: 30px;
+      margin-top: 80px; /* Space for the fixed header */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .experiment {
+      background-color: rgba(255, 255, 255, 0.9); /* White with slight transparency */
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      width: 80%;
+      max-width: 600px;
+      text-align: left;
+    }
+
+    .experiment h2 {
+      color: #6200ea;
+      font-size: 1.6rem;
+      font-weight: 600;
+    }
+
+    .experiment p {
+      color: #5e5e5e;
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    .controls {
+      margin-top: 15px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .controls label {
+      font-size: 1rem;
+      color: #4A4A4A;
+    }
+
+    .controls input {
+      padding: 10px;
+      font-size: 1rem;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      outline: none;
+    }
+
+    .controls input:focus {
+      border-color: #6200ea;
+    }
+
+    button {
+      background-color: #6200ea; /* Soft pastel purple */
+      color: white;
+      border: none;
+      padding: 12px 25px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #3700b3; /* Darker purple on hover */
+    }
+
+    #result {
+      background-color: #f9f9f9;
+      padding: 12px;
+      margin-top: 15px;
+      border-radius: 8px;
+      color: #6200ea;
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-top: 20px;
+      text-align: center;
+      text-decoration: none;
+      color: #6200ea;
+      font-weight: 600;
+      font-size: 1.2rem;
+      transition: color 0.3s ease;
+    }
+
+    .back-link:hover {
+      color: #3700b3;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Photosynthesis Experiment</h1>
+</header>
+
+<main>
+<p>Photosynthesis is the process by which green plants, algae, and some bacteria convert light energy into chemical energy, producing food for themselves. It primarily takes place in the chloroplasts of plant cells, where chlorophyll absorbs sunlight and helps in synthesizing food.</p>
+
+<p><strong>Basic Equation of Photosynthesis:</strong></p>
+<p>The general equation for photosynthesis is:</p>
+<p><em>6CO<sub>2</sub> + 6H<sub>2</sub>O + light energy → C<sub>6</sub>H<sub>12</sub>O<sub>6</sub> + 6O<sub>2</sub></em></p>
+<p>In simple terms, plants take in carbon dioxide (CO<sub>2</sub>) from the air, water (H<sub>2</sub>O) from the soil, and use the energy from sunlight to produce glucose (C<sub>6</sub>H<sub>12</sub>O<sub>6</sub>) and oxygen (O<sub>2</sub>).</p>
+
+<p><strong>Stages of Photosynthesis:</strong></p>
+<p><strong>1. Light-dependent Reactions:</strong> These reactions occur in the thylakoid membranes of the chloroplasts. When sunlight hits chlorophyll, it excites electrons, which then flow through an electron transport chain, generating ATP (energy) and NADPH (a carrier molecule).</p>
+<p><strong>2. Calvin Cycle (Light-independent Reactions):</strong> In this cycle, the energy from ATP and NADPH is used to fix carbon dioxide into glucose. The cycle takes place in the stroma of the chloroplasts, and its main product is glucose.</p>
+
+<p><strong>Factors Affecting Photosynthesis:</strong></p>
+<ul>
+    <li><strong>Light Intensity:</strong> A higher intensity of light increases the rate of photosynthesis, up to a certain point.</li>
+    <li><strong>Carbon Dioxide Concentration:</strong> More CO<sub>2</sub> available in the air speeds up photosynthesis.</li>
+    <li><strong>Temperature:</strong> Photosynthesis is more efficient at moderate temperatures. Too high or too low temperatures can slow down or stop the process.</li>
+    <li><strong>Water Availability:</strong> Water is a key ingredient in the photosynthesis reaction, and a lack of water can hinder the process.</li>
+</ul>
+
+<p><strong>Importance of Photosynthesis:</strong></p>
+<ul>
+    <li>Photosynthesis is the foundation of life on Earth, providing the energy needed for nearly all organisms.</li>
+    <li>It produces oxygen, which is essential for the survival of most living organisms.</li>
+    <li>It helps regulate the carbon dioxide levels in the atmosphere, contributing to the balance of gases in the environment.</li>
+</ul>
+
+<p>In summary, photosynthesis is a vital process that sustains life on Earth, converting light energy into chemical energy that plants and other organisms use to grow and thrive! 🌱☀️</p>
+
+  <div class="experiment">
+    <h2>Understand Photosynthesis</h2>
+    <p>Adjust light and CO₂ levels to see how photosynthesis is affected.</p>
+    <label for="light">Light Intensity:</label>
+    <input type="range" id="light" min="1" max="10">
+    <label for="co2">CO₂ Levels:</label>
+    <input type="range" id="co2" min="1" max="10">
+    <button onclick="simulatePhotosynthesis()">Simulate</button>
+    <p id="result"></p>
+  </div>
+  <a href="biology.html" class="back-link" >Back to Biology Experiments</a><br>
+    <a href="front end.html" class="back-link" >Back to Main Page</a>
+
+</main>
+
+<script>
+  function simulatePhotosynthesis() {
+    const light = document.getElementById('light').value;
+    const co2 = document.getElementById('co2').value;
+    const rate = Math.min(light, co2) * 10;
+    document.getElementById('result').innerText = `Photosynthesis Rate: ${rate}%`;
+  }
+</script>
+
+</body>
+</html>

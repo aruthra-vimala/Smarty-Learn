@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Free Fall Experiment</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: url('bg.jpg') no-repeat center center fixed;
+      background-size: cover;
+      margin: 0;
+      padding: 0;
+      color: #4A4A4A;
+      text-align: center;
+    }
+
+    header {
+      background-color: rgba(98, 0, 234, 0.8); /* Soft pastel purple */
+      color: white;
+      padding: 20px;
+      text-align: center;
+      font-weight: 600;
+      font-size: 2rem;
+    }
+
+    main {
+      padding: 30px;
+      margin-top: 80px; /* Space for the fixed header */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .experiment {
+      background-color: rgba(255, 255, 255, 0.9); /* White with slight transparency */
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      width: 80%;
+      max-width: 600px;
+      text-align: left;
+    }
+
+    .experiment h2 {
+      color: #6200ea;
+      font-size: 1.6rem;
+      font-weight: 600;
+    }
+
+    .experiment p {
+      color: #5e5e5e;
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    .controls {
+      margin-top: 15px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .controls label {
+      font-size: 1rem;
+      color: #4A4A4A;
+    }
+
+    .controls input {
+      padding: 10px;
+      font-size: 1rem;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      outline: none;
+    }
+
+    .controls input:focus {
+      border-color: #6200ea;
+    }
+
+    button {
+      background-color: #6200ea; /* Soft pastel purple */
+      color: white;
+      border: none;
+      padding: 12px 25px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #3700b3; /* Darker purple on hover */
+    }
+
+    #result {
+      background-color: #f9f9f9;
+      padding: 12px;
+      margin-top: 15px;
+      border-radius: 8px;
+      color: #6200ea;
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-top: 20px;
+      text-align: center;
+      text-decoration: none;
+      color: #6200ea;
+      font-weight: 600;
+      font-size: 1.2rem;
+      transition: color 0.3s ease;
+    }
+
+    .back-link:hover {
+      color: #3700b3;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Free Fall Experiment</h1>
+</header>
+
+<main>
+  <p>Free fall is the motion of a body under the influence of gravity alone, with no other forces acting on it, such as air resistance. It is a fundamental concept in physics, often used to understand how objects move when dropped from a height.</p>
+
+  <p>In free fall, all objects accelerate towards the Earth (or any other planet or celestial body) at the same rate, regardless of their mass. This acceleration due to gravity is typically denoted as <strong>g</strong>, and on Earth, its value is approximately <strong>9.8 m/s²</strong>.</p>
+
+  <p><strong>Key Concepts of Free Fall:</strong></p>
+  <p><strong>Acceleration due to Gravity (g):</strong> The constant acceleration that objects experience when in free fall. On Earth, g is approximately <strong>9.8 m/s²</strong>.</p>
+  <p><strong>Initial Velocity:</strong> If an object is dropped from rest, its initial velocity is zero. If it is thrown downwards, it will have a non-zero initial velocity.</p>
+  <p><strong>Time of Fall:</strong> The duration for which an object falls depends on the initial velocity and the height from which it is dropped.</p>
+
+  <p><strong>Example of Free Fall:</strong></p>
+  <p>If you drop an object from a height of 20 meters, its motion will be affected only by gravity (assuming air resistance is negligible). The object will accelerate downwards at 9.8 m/s², and the velocity will increase until it hits the ground.</p>
+
+  <p><strong>Equations for Free Fall:</strong></p>
+  <p>The following kinematic equation can be used to calculate the velocity or distance fallen:</p>
+  <p><em>v = u + gt</em><br>
+  Where:
+    <strong>v</strong> = final velocity (m/s)<br>
+    <strong>u</strong> = initial velocity (m/s)<br>
+    <strong>g</strong> = acceleration due to gravity (9.8 m/s²)<br>
+    <strong>t</strong> = time of fall (seconds)</p>
+
+  <p><strong>Applications of Free Fall:</strong></p>
+  <p>✔ <strong>Physics Experiments:</strong> Free fall is often used in physics to study acceleration, velocity, and motion.</p>
+  <p>✔ <strong>Astronomy:</strong> Understanding free fall is crucial for studying celestial bodies, orbits, and planetary motion.</p>
+  <p>✔ <strong>Engineering:</strong> Engineers use the concept of free fall when designing safety systems, such as airbags and parachutes, that slow down the descent of falling objects.</p>
+
+  <p><strong>Why is Free Fall Important?</strong></p>
+  <p>✔ <strong>Understanding Gravity:</strong> Free fall provides a direct way to study the effects of gravity without the interference of other forces like air resistance.</p>
+  <p>✔ <strong>Space Exploration:</strong> The principles of free fall are essential for understanding the behavior of spacecraft and astronauts in orbit, where they are in a continuous state of free fall.</p>
+
+  <p>Free fall is a critical concept in physics, helping us understand the fundamental forces that shape our universe! 🌍💨</p>
+
+  <div class="experiment">
+    <h2>Calculate Free Fall Time</h2>
+    <p>Enter the height from which the object falls and calculate the time it takes to reach the ground.</p>
+
+    <div class="controls">
+      <label for="height">Enter Height (in meters):</label>
+      <input type="number" id="height" placeholder="e.g., 10" min="1">
+      <button onclick="calculateFreeFall()">Start Experiment</button>
+    </div>
+
+    <div id="result"></div>
+  </div>
+
+  <a href="physics.html" class="back-link">Back to Physics Experiments</a>
+  <a href="front end.html" class="back-link">Back to Main Page</a>
+</main>
+
+<script>
+  function calculateFreeFall() {
+    const height = document.getElementById('height').value;
+    const gravity = 9.8; // m/s^2
+
+    if (!height || height <= 0) {
+      document.getElementById('result').innerText = 'Please enter a valid height.';
+      return;
+    }
+
+    const time = Math.sqrt((2 * height) / gravity).toFixed(2);
+    document.getElementById('result').innerText = `The object will hit the ground in ${time} seconds.`;
+  }
+</script>
+
+</body>
+</html>

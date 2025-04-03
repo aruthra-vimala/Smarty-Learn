@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Physics Experiments</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: url('bg.jpg') no-repeat center center fixed;
+      background-size: cover;
+      margin: 0;
+      padding: 0;
+      color: #4A4A4A;
+      text-align: center;
+      filter: blur(0.2px);
+    }
+
+    header {
+      background-color: rgba(173, 163, 255, 0.8);
+      color: #4A4A4A;
+      padding: 20px;
+      text-align: center;
+      font-weight: 600;
+      font-size: 2rem;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      left: 0;
+      z-index: 10;
+    }
+
+    main {
+      margin-top: 100px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 30px;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    .experiment {
+      background-color: rgba(255, 255, 255, 0.8); /* Light pastel white */
+      padding: 20px;
+      margin: 15px 0;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      width: 80%;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+    .experiment:hover {
+      background-color: rgba(173, 163, 255, 0.6);
+      transform: scale(1.05);
+    }
+
+    .experiment h2 {
+      color: #4A4A4A;
+      font-size: 1.4rem;
+    }
+
+    .experiment p {
+      color: #6D6D6D;
+      font-size: 1rem;
+      margin-bottom: 10px;
+    }
+
+    .experiment button {
+      padding: 10px 20px;
+      background-color: #6200ea;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 1rem;
+      transition: background-color 0.3s ease;
+    }
+
+    .experiment button:hover {
+      background-color: #3700b3;
+    }
+
+    .back-link {
+      display: block;
+      margin-top: 30px;
+      text-align: center;
+      text-decoration: none;
+      color: #6200ea;
+      font-weight: bold;
+      font-size: 1.2rem;
+      transition: color 0.3s ease;
+    }
+
+    .back-link:hover {
+      color: #3700b3;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Physics Experiments</h1>
+</header>
+
+<main>
+<br><br><br><br><br><br><br><br><br>
+  <div class="experiment">
+    <h2>1. Free Fall Simulation</h2>
+    <p>Calculate the time it takes for an object to fall from a given height.</p>
+    <button onclick="location.href='freefall.html'">Try Experiment</button>
+  </div>
+
+  <div class="experiment">
+    <h2>2. Newton’s Second Law</h2>
+    <p>Explore the relationship between force, mass, and acceleration.</p>
+    <button onclick="location.href='newton2ndlaw.html'">Try Experiment</button>
+  </div>
+
+  <div class="experiment">
+    <h2>3. Pendulum Motion</h2>
+    <p>Observe the effects of string length on the period of a pendulum.</p>
+    <button onclick="location.href='pendulum.html'">Try Experiment</button>
+  </div>
+  
+  <a href="front end.html" class="back-link">Back to Main Page</a>
+  <br><br>
+</main>
+
+</body>
+</html>

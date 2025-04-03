@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Free Fall Experiment</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: url('bg.jpg') no-repeat center center fixed;
+      background-size: cover;
+      margin: 0;
+      padding: 0;
+      color: #4A4A4A;
+      text-align: center;
+    }
+
+    header {
+      background-color: rgba(98, 0, 234, 0.8); /* Soft pastel purple */
+      color: white;
+      padding: 20px;
+      text-align: center;
+      font-weight: 600;
+      font-size: 2rem;
+    }
+
+    main {
+      padding: 30px;
+      margin-top: 80px; /* Space for the fixed header */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .experiment {
+      background-color: rgba(255, 255, 255, 0.9); /* White with slight transparency */
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      width: 80%;
+      max-width: 600px;
+      text-align: left;
+    }
+
+    .experiment h2 {
+      color: #6200ea;
+      font-size: 1.6rem;
+      font-weight: 600;
+    }
+
+    .experiment p {
+      color: #5e5e5e;
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    .controls {
+      margin-top: 15px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .controls label {
+      font-size: 1rem;
+      color: #4A4A4A;
+    }
+
+    .controls input {
+      padding: 10px;
+      font-size: 1rem;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      outline: none;
+    }
+
+    .controls input:focus {
+      border-color: #6200ea;
+    }
+
+    button {
+      background-color: #6200ea; /* Soft pastel purple */
+      color: white;
+      border: none;
+      padding: 12px 25px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #3700b3; /* Darker purple on hover */
+    }
+
+    #result {
+      background-color: #f9f9f9;
+      padding: 12px;
+      margin-top: 15px;
+      border-radius: 8px;
+      color: #6200ea;
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-top: 20px;
+      text-align: center;
+      text-decoration: none;
+      color: #6200ea;
+      font-weight: 600;
+      font-size: 1.2rem;
+      transition: color 0.3s ease;
+    }
+
+    .back-link:hover {
+      color: #3700b3;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Virtual Microscope</h1>
+</header>
+
+<main>
+<p>A virtual microscope is an interactive tool that simulates the functionality of a real microscope, allowing users to examine digital images of specimens at various magnifications. It is widely used in education and research, providing a convenient and accessible way to study microscopic details without the need for physical equipment.</p>
+
+<p>Virtual microscopes use high-resolution images, often captured using digital cameras attached to real microscopes, to provide a detailed view of samples like cells, tissues, and microorganisms. These images can be zoomed in or out, and users can adjust various settings to simulate the behavior of a real microscope.</p>
+
+<p>Key features of a virtual microscope:</p>
+<p><strong>Zoom Functionality:</strong> The ability to zoom in and out to observe the specimen at different magnifications, from low to high power.</p>
+<p><strong>Interactive Interface:</strong> Users can navigate the slide, move across different areas of the specimen, and explore intricate details of the sample.</p>
+<p><strong>Image Enhancement:</strong> Adjusting brightness, contrast, and other parameters to improve visibility and clarity of the image.</p>
+
+<p><strong>Applications of Virtual Microscopes:</strong></p>
+<p>✔ <strong>Education:</strong> Students can study biology and related fields by accessing high-quality images of specimens from anywhere.</p>
+<p>✔ <strong>Research:</strong> Scientists can analyze samples without being physically present in the lab, enabling easier collaboration and data sharing.</p>
+<p>✔ <strong>Public Access:</strong> Virtual microscopes make it possible for the general public to explore and learn about microscopic life in an engaging and accessible way.</p>
+
+<p><strong>Benefits of Virtual Microscopes:</strong></p>
+<p>✔ <strong>Convenience:</strong> No need for physical lab equipment, which can be costly and require maintenance.</p>
+<p>✔ <strong>Accessibility:</strong> Anyone with a computer or mobile device can access virtual microscopy, making it an effective learning tool for remote or underserved areas.</p>
+<p>✔ <strong>Preservation:</strong> Virtual slides can be archived and shared, preserving valuable specimens without the risk of degradation over time.</p>
+
+<p>Virtual microscopes are transforming the way we learn and research, bringing the wonders of the microscopic world to everyone with the click of a button! 🔬🌍</p>
+
+  <div class="experiment">
+    <h2>Explore Microscopic Organisms</h2>
+    <p>Select a specimen to view under the virtual microscope.</p>
+    <select id="specimen">
+      <option value="bacteria">Bacteria</option>
+      <option value="plant_cell">Plant Cell</option>
+      <option value="animal_cell">Animal Cell</option>
+    </select>
+    <button onclick="viewSpecimen()">View</button>
+    <p id="result"></p>
+  </div>
+  <a href="biology.html">Back to Biology Experiments</a><br>
+    <a href="front end.html" class="back-link" >Back to Main Page</a>
+
+</main>
+
+<script>
+  function viewSpecimen() {
+    const specimen = document.getElementById('specimen').value;
+    document.getElementById('result').innerText = `You are viewing: ${specimen.replace('_', ' ')}`;
+  }
+</script>
+
+</body>
+</html>

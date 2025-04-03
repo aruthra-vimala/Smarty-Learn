@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Free Fall Experiment</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: url('bg.jpg') no-repeat center center fixed;
+      background-size: cover;
+      margin: 0;
+      padding: 0;
+      color: #4A4A4A;
+      text-align: center;
+    }
+
+    header {
+      background-color: rgba(98, 0, 234, 0.8); /* Soft pastel purple */
+      color: white;
+      padding: 20px;
+      text-align: center;
+      font-weight: 600;
+      font-size: 2rem;
+    }
+
+    main {
+      padding: 30px;
+      margin-top: 80px; /* Space for the fixed header */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .experiment {
+      background-color: rgba(255, 255, 255, 0.9); /* White with slight transparency */
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      width: 80%;
+      max-width: 600px;
+      text-align: left;
+    }
+
+    .experiment h2 {
+      color: #6200ea;
+      font-size: 1.6rem;
+      font-weight: 600;
+    }
+
+    .experiment p {
+      color: #5e5e5e;
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    .controls {
+      margin-top: 15px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .controls label {
+      font-size: 1rem;
+      color: #4A4A4A;
+    }
+
+    .controls input {
+      padding: 10px;
+      font-size: 1rem;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      outline: none;
+    }
+
+    .controls input:focus {
+      border-color: #6200ea;
+    }
+
+    button {
+      background-color: #6200ea; /* Soft pastel purple */
+      color: white;
+      border: none;
+      padding: 12px 25px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #3700b3; /* Darker purple on hover */
+    }
+
+    #result {
+      background-color: #f9f9f9;
+      padding: 12px;
+      margin-top: 15px;
+      border-radius: 8px;
+      color: #6200ea;
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-top: 20px;
+      text-align: center;
+      text-decoration: none;
+      color: #6200ea;
+      font-weight: 600;
+      font-size: 1.2rem;
+      transition: color 0.3s ease;
+    }
+
+    .back-link:hover {
+      color: #3700b3;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Acid-Base Indicator</h1>
+</header>
+
+<main>
+
+<p>Acid-base testing is a method used to determine whether a substance is acidic, basic, or neutral by using special chemical compounds called <strong>indicators</strong>. These indicators change color based on the pH of the solution, helping to identify its nature.</p>
+
+<p><strong>Understanding Acids and Bases:</strong></p>
+<p>- <strong>Acids:</strong> Substances that release hydrogen ions (H⁺) in solution. They have a pH value less than 7. Examples include lemon juice, vinegar, and hydrochloric acid (HCl).</p>
+<p>- <strong>Bases:</strong> Substances that release hydroxide ions (OH⁻) in solution. They have a pH value greater than 7. Examples include baking soda, soap, and sodium hydroxide (NaOH).</p>
+<p>- <strong>Neutral Substances:</strong> Have a pH of exactly 7, such as pure water.</p>
+
+<p><strong>Common Indicators Used in Acid-Base Testing:</strong></p>
+<p>✔ <strong>Litmus Paper:</strong> A simple indicator that turns <span style="color: red;"><strong>red</strong></span> in acids and <span style="color: blue;"><strong>blue</strong></span> in bases.</p>
+<p>✔ <strong>Phenolphthalein:</strong> Colorless in acidic solutions but turns <span style="color: pink;"><strong>pink</strong></span> in basic solutions.</p>
+<p>✔ <strong>Methyl Orange:</strong> Changes from <span style="color: red;"><strong>red</strong></span> in acidic solutions to <span style="color: yellow;"><strong>yellow</strong></span> in basic solutions.</p>
+<p>✔ <strong>Universal Indicator:</strong> Shows a range of colors depending on the pH level of the solution, giving a more accurate measure of acidity or alkalinity.</p>
+
+<p><strong>Testing Procedure:</strong></p>
+<p>1. Take a small sample of the unknown solution.</p>
+<p>2. Add a few drops of the chosen indicator.</p>
+<p>3. Observe the color change and compare it with a pH scale.</p>
+<p>4. Determine whether the solution is acidic, basic, or neutral.</p>
+
+<p><strong>Applications of Acid-Base Testing:</strong></p>
+<p>✔ Used in laboratories for chemical analysis.</p>
+<p>✔ Helps in food industry testing (e.g., checking acidity in beverages).</p>
+<p>✔ Essential in medical diagnostics (e.g., measuring pH levels in blood and urine tests).</p>
+<p>✔ Important in environmental studies to test the acidity of rainwater and soil.</p>
+
+<p>Acid-base indicators provide a quick and efficient way to test the nature of substances, making them essential tools in science and industry! ⚗️🔬</p>
+
+
+  <div class="experiment">
+    <h2>Test pH Levels</h2>
+    <p>Choose a substance to test its pH level.</p>
+    <select id="substance">
+      <option value="acid">Lemon Juice (Acid)</option>
+      <option value="base">Soap Water (Base)</option>
+      <option value="neutral">Pure Water (Neutral)</option>
+    </select>
+    <button onclick="testPH()">Test pH</button>
+    <p id="result"></p>
+  </div>
+  <a href="chemistry.html">Back to Chemistry Experiments</a><br>
+    <a href="front end.html" class="back-link" >Back to Main Page</a>
+
+</main>
+
+<script>
+  function testPH() {
+    const substance = document.getElementById('substance').value;
+    let resultText = "";
+
+    if (substance === "acid") resultText = "Red - Strong Acid";
+    else if (substance === "base") resultText = "Blue - Strong Base";
+    else resultText = "Green - Neutral";
+
+    document.getElementById('result').innerText = `Indicator Color: ${resultText}`;
+  }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Free Fall Experiment</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: url('bg.jpg') no-repeat center center fixed;
+      background-size: cover;
+      margin: 0;
+      padding: 0;
+      color: #4A4A4A;
+      text-align: center;
+    }
+
+    header {
+      background-color: rgba(98, 0, 234, 0.8); /* Soft pastel purple */
+      color: white;
+      padding: 20px;
+      text-align: center;
+      font-weight: 600;
+      font-size: 2rem;
+    }
+
+    main {
+      padding: 30px;
+      margin-top: 80px; /* Space for the fixed header */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .experiment {
+      background-color: rgba(255, 255, 255, 0.9); /* White with slight transparency */
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      width: 80%;
+      max-width: 600px;
+      text-align: left;
+    }
+
+    .experiment h2 {
+      color: #6200ea;
+      font-size: 1.6rem;
+      font-weight: 600;
+    }
+
+    .experiment p {
+      color: #5e5e5e;
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    .controls {
+      margin-top: 15px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .controls label {
+      font-size: 1rem;
+      color: #4A4A4A;
+    }
+
+    .controls input {
+      padding: 10px;
+      font-size: 1rem;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      outline: none;
+    }
+
+    .controls input:focus {
+      border-color: #6200ea;
+    }
+
+    button {
+      background-color: #6200ea; /* Soft pastel purple */
+      color: white;
+      border: none;
+      padding: 12px 25px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #3700b3; /* Darker purple on hover */
+    }
+
+    #result {
+      background-color: #f9f9f9;
+      padding: 12px;
+      margin-top: 15px;
+      border-radius: 8px;
+      color: #6200ea;
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-top: 20px;
+      text-align: center;
+      text-decoration: none;
+      color: #6200ea;
+      font-weight: 600;
+      font-size: 1.2rem;
+      transition: color 0.3s ease;
+    }
+
+    .back-link:hover {
+      color: #3700b3;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>DNA Extraction</h1>
+</header>
+
+<main>
+  <div class="experiment">
+    <h2>Extract DNA from a Sample</h2>
+    <p>Choose a sample and simulate the DNA extraction process.</p>
+    <select id="sample">
+      <option value="strawberry">Strawberry</option>
+      <option value="banana">Banana</option>
+      <option value="onion">Onion</option>
+    </select>
+    <button onclick="extractDNA()">Extract DNA</button>
+    
+    <div class="test-tube-container">
+      <div id="dna-liquid" class="dna-liquid"></div>
+    </div>
+
+    <p id="result"></p>
+  </div>
+
+  <a href="biology.html" class="back-link">Back to Biology Experiments</a><br>
+  <a href="front end.html" class="back-link">Back to Main Page</a>
+
+</main>
+
+<script>
+  function extractDNA() {
+    const sample = document.getElementById('sample').value;
+    const dnaLiquid = document.getElementById('dna-liquid');
+    const result = document.getElementById('result');
+
+    // Reset animation
+    dnaLiquid.style.height = "0";
+
+    // Set different colors for different samples
+    let color = "";
+    if (sample === "strawberry") {
+      color = "red";
+    } else if (sample === "banana") {
+      color = "yellow";
+    } else if (sample === "onion") {
+      color = "purple";
+    }
+
+    // Start animation
+    setTimeout(() => {
+      dnaLiquid.style.backgroundColor = color;
+      dnaLiquid.style.height = "80%"; // DNA fills the test tube
+    }, 100);
+
+    // Display result
+    setTimeout(() => {
+      result.innerText = `DNA extracted successfully from ${sample}!`;
+    }, 2000);
+  }
+</script>
+
+</body>
+</html>
