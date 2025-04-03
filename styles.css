@@ -1,0 +1,180 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background: url('bg.jpg') no-repeat center center fixed;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    color: #4A4A4A;
+    text-align: center;
+    filter: blur(0.2px);
+}
+
+header {
+    background-color: rgba(173, 163, 255, 0.8);
+    color: #4A4A4A;
+    padding: 20px;
+    text-align: center;
+    font-weight: 600;
+    font-size: 2rem;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 10;
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+    margin-top: 100px;
+}
+
+.dashboard {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    gap: 30px;
+}
+
+.experiment {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    margin: 15px 0;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    width: 30%;
+    text-align: center;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.experiment:hover {
+    background-color: rgba(173, 163, 255, 0.6);
+    transform: scale(1.05);
+}
+
+.experiment h3 {
+    color: #4A4A4A;
+    font-size: 1.5rem;
+}
+
+.experiment p {
+    color: #6D6D6D;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.log, .interests {
+    margin-top: 30px;
+}
+
+.log input, .log button, .interests button {
+    padding: 10px;
+    font-size: 1rem;
+    border-radius: 5px;
+}
+
+.log input {
+    width: 80%;
+    margin-right: 10px;
+}
+
+.log button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.log button:hover {
+    background-color: #218838;
+}
+
+.interests button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    margin: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.interests button:hover {
+    background-color: #0056b3;
+}
+
+.back-link {
+    display: block;
+    margin-top: 30px;
+    text-align: center;
+    text-decoration: none;
+    color: #6200ea;
+    font-weight: bold;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+}
+
+.back-link:hover {
+    color: #3700b3;
+}
+
+.speedometer-container {
+    width: 150px;
+    height: 150px;
+    position: relative;
+    margin: auto;
+}
+
+.streak-container {
+    margin-top: 30px;
+    font-size: 1.5rem;
+}
+
+.streak-bar {
+    width: 100%;
+    height: 20px;
+    border-radius: 10px;
+    background-color: #f4f4f9;
+    position: relative;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.streak-progress {
+    height: 100%;
+    border-radius: 10px;
+    background-color: #28a745;
+    transition: width 0.3s ease;
+}
+
+.subject-link {
+    display: block;
+    width: 70%;
+    padding: 20px;
+    margin: 10px 0;
+    background-color: rgba(173, 163, 255, 0.7);
+    color: #4A4A4A;
+    text-decoration: none;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.subject-link:hover {
+    background-color: rgba(141, 126, 255, 0.7);
+    transform: scale(1.05);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.subject-link:active {
+    transform: scale(0.98);
+}
